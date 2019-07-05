@@ -4,7 +4,9 @@ import * as schemas from 'schemas'
 
 export const getEntities = (state) => state.entities
 export const getArticles = state => state.entities.get('articles')
+export const getAuthors = state => state.entities.get('authors')
 export const getIsArticlesLoaded = state => state.entities.get('isArticlesLoaded')
+export const getIsAuthorsLoaded = state => state.entities.get('isAuthorsLoaded')
 
 export const getArticle = articleId => createSelector(
   [getArticles, getEntities],
@@ -22,3 +24,21 @@ export const getArticle = articleId => createSelector(
     )
   }
 )
+
+export const getAuthor = articleId => createSelector(
+  [getAuthors, getEntities],
+  (authors, entities) => {
+    const author = authors.get(authorId)
+
+    if (!author) {
+      return null
+    }
+
+    return denormalize(
+      author,
+      schemas.author,
+      entities
+    )
+  }
+)
+

@@ -4,14 +4,16 @@ import styles from './AppLayout.scss'
 import Header from 'common/components/Header'
 import Content from 'common/components/Content'
 
-const AppLayout = ({ children }) => (
+const AppLayout = ({ children }) => {
+console.log(children)
+	return(
   <div className={styles.component}>
     <Header />
     <Content className={styles.content}>
       {children}
     </Content>
   </div>
-)
+)}
 
 AppLayout.propTypes = {
   children: PropTypes.node.isRequired

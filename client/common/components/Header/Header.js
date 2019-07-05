@@ -8,8 +8,8 @@ const Header = () => (
   <div className={styles.component}>
     <Content className={styles.content}>
       <Link
-        to={Routes.ARTICLES}
-        className={styles.logo}>
+        className={styles.logo}
+        to={Routes.ARTICLES}>
         Overloop
       </Link>
       <div className={styles.navigation}>
@@ -17,6 +17,13 @@ const Header = () => (
           className={styles.navigationItem}
           to={Routes.ARTICLES}>
           Articles
+        </Link>
+      </div>
+      <div className={styles.navigation}>
+        <Link
+          className={styles.navigationItem}
+          to={Routes.AUTHORS}>
+          Authors
         </Link>
       </div>
     </Content>
