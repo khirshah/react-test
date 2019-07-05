@@ -7,6 +7,14 @@ function applyRoutes (app) {
   app.put('/articles/:articleId', articles.update)
   app.delete('/articles/:articleId', articles.destroy)
 
+  // Authors
+  const authors = require('./controllers/authors')
+  app.get('/authors', authors.all)
+  app.post('/authors', authors.create)
+  app.get('/authors/:authorId', authors.show)
+  app.put('/authors/:authorId', authors.update)
+  app.delete('/authors/:authorId', authors.destroy)
+
   // Countries
   const countries = require('./controllers/countries')
   app.get('/countries', countries.all)

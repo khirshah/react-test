@@ -7,6 +7,7 @@ let defaultHeaders = {
 
 export default function request (path, args = {}) {
   const url = `${API_URL}/${path}`
+  console.log('request')
 
   const options = {
     headers: defaultHeaders,
